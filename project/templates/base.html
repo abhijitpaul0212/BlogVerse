@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block header %}
+    <center>
+    <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('blogs') }}">
+          <img src="{{ url_for('static', filename='images/blogverse.png') }}" alt="" width="30" height="30" class="d-inline-block">
+          BlogVerse
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('blogs') }}">Home</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-2">
+            {% if call_or_get(current_user.is_authenticated) %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('user.edit_user_profile') }}">{{ current_user.username or current_user.email }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('user.logout') }}">Sign out</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('create_blog') }}">Create Blog</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('view_blogs') }}">My Blogs</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('user.login') }}">Sign in</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    </center>
+{% endblock %}
+
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+{% block footer %}
+<center>
+<footer class="footer fixed-footer">
+    <div>
+        <section>
+            <a class="footer__item" href="https://linkedin.com/in/abhijitpaul0212">|| LinkedIn </a>
+            <a class="footer__item" href="https://github.com/abhijitpaul0212">|| Github </a>
+            <a class="footer__item" href="https://medium.com/@abhijit-paul">|| Medium  ||</a>
+        </section>
+    </div>
+    <section class="text-center fixed-footer">
+      <div>{{ user_manager.USER_APP_NAME }} {{ user_manager.USER_APP_VERSION }}</div>
+      <div>&copy; {{ user_manager.USER_COPYRIGHT_YEAR }} {{ user_manager.USER_CORPORATION_NAME }}</div>
+    </section>
+</footer>
+
+</center>
+{% endblock %}

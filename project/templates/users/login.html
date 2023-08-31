@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <!-- start form -->
+                <form class="form-container" method="POST">
+                    <h2 class="text-dark form-container--title">Welcome to MyBlogs</h2>
+                    <br/>
+                    <br/>
+                    <h3 class="text-dark">Sign In</h1>
+                    <div class="mb-3">
+                        <!-- <label for="exampleInputEmail1" class="form-label">Email</label> -->
+                        <input type="email" name="email" value="{{ email }}" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3">
+                        <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-large">Login</button>
+                </form>
+                <br>
+                <!-- end form -->
+                <p class="text-dark signup">Account Not Created? <a href="{{ url_for('users.register') }}">Register</a></p>
+                <div>
+                    {% for message in get_flashed_messages() %}
+                        <div class="alert text-dark">
+                        <p>{{ message }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        </div>
+    </div>   
+</center>
+<br/>
+<br/>
+{% endblock %}

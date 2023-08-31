@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <style>
+        th{
+            background-color: aqua;
+        }
+
+        table, td, th{
+            border: 1px solid black;
+            border-radius: 12px;
+        }
+    </style>
+
+    {% if current_user.username == Null %}
+        <h3>Welcome Guest</h3>
+        <div><h6>** Sign In to read the blogs in details **</h6></div>
+    {% else %}
+        <h3>Welcome {{ current_user.username }}</h3>
+    {% endif %}
+    <p>
+        <table>
+            <thead>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Content</th>
+                <th>Read Count</th>
+                <th>Rating</th>
+            </thead>
+            <tbody>
+                {% for a_blog in all_blogs %}
+                    <tr>
+
+                        <td>{% for a_user in all_users %}
+                                {% if a_user.id == a_blog.blog_user_id %} 
+                                    {{ a_user.username }} 
+                                {% endif %}
+                            {% endfor %}                         
+                        </td>
+                        <td>{% for a_category in all_categories %}
+                                {% if a_category.id == a_blog.category_id %} 
+                                    {{ a_category.category_name }} 
+                                {% endif %}
+                            {% endfor %} 
+                        </td>
+                        {% if current_user.is_authenticated %}
+                            <td><a href="/blogDetail/{{ a_blog.id }}/{% for a_user in all_users %}
+                                {%- if a_user.id == a_blog.blog_user_id -%} 
+                                    {{ a_user.username }} 
+                                {%- endif -%}
+                            {% endfor %}/{% for a_category in all_categories %}
+                            {%- if a_category.id == a_blog.category_id -%} 
+                                {{ a_category.category_name }} 
+                            {%- endif -%}
+                        {% endfor %} "> {{ a_blog.blog_text | safe | truncate(275) }} <i><b style="color: blueviolet;">Click here...</b></i></a></td>
+                        {% else %}
+                            <td>{{ a_blog.blog_text | safe | truncate(275) }} <i><b style="color: blueviolet;">Sign in to read further...</b></i> </td>
+                        {% endif %}
+                        <td>{{ a_blog.blog_read_count }}</td>
+                        <td>{{ a_blog.blog_rating_count }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </p>
+
+</center>
+{% endblock %}

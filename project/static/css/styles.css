@@ -1,0 +1,370 @@
+html,
+body{
+    /* font-family: Lato, sans-serif; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, sans-serif;
+}
+
+*, 
+*::after, 
+*::before{
+    box-sizing: inherit;
+}
+/* 
+body{
+    display: flex;
+    flex-direction: column;
+
+} */
+
+/* nav a{
+    color: #fbffff;
+    font-size: 2.5em;
+    margin-left: 50px;
+    text-decoration: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0);
+    background-color: rgb(118, 48, 167);
+}
+
+nav a:hover{
+    color: #fbffff;
+    background-color: #92141e;
+} */
+
+/* .layout_bg{
+    background: url("../images/bg2.jpg") no-repeat;
+    width: 100%;
+    height: 200vh;
+    margin-top: 0px;
+    margin-bottom: 0px;
+} */
+
+table, tr{
+    border: 1px solid black;
+    border-radius: 12px;
+    border-collapse: collapse;
+}
+
+.form-container{
+    border: 0px solid #fff;
+    padding: 50px 60px;
+    margin-top: 20vh;
+    -webkit-box-shadow: -1px 5px 26px 11px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 5px 26px 11px rgba(0,0,0,0.75);
+    box-shadow: -1px 5px 26px 11px rgba(0,0,0,0.75);
+}
+
+.form-container--title{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.signup{
+    align-items: center;
+}
+
+.blog_home_links{
+    display: flex;
+    flex-direction: row;
+    margin-right: 12px;
+    padding: 40px 0;
+    margin-top: 50px;
+    align-items: flex-start;
+}
+
+
+/* footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: #323f43;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top: 4px solid black;
+    color: white;
+    font-size: 16px;
+
+    flex-shrink: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+} */
+
+.footer__content{
+    margin: auto;
+    max-width: 640px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer .left{
+    flex-grow: 2;
+    display: flex;
+    flex-direction:column;
+}
+
+.footer .right{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer__column{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.footer__item{
+    margin-bottom: 5px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__item:hover{
+    text-decoration: underline;
+}
+
+
+/* Footer fix */
+
+/* html,
+body {
+    height: 100%;
+} */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+/* Common styles */
+
+:root {
+    --color-dark: #343a40;
+    --color-pink: #ca02cc;
+    --font-cursive: 'Indie Flower', cursive;
+    --font-default: 'Noto Sans', sans-serif;
+    --shadow-normal: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+body {
+    font-family: var(--font-default);
+    font-size: 20px;
+}
+
+.container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+a {
+    color: var(--color-pink);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #820385;
+}
+
+/* Navbar */
+.navbar {
+    border-bottom: 1px solid var(--color-dark);
+}
+
+.navbar .nav-link {
+    color: var(--color-pink) !important;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+/* Hero */
+#hero-image-container {
+    background: url(../media/chalk.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 62.6px);
+
+}
+
+#hero-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+
+}
+
+.hero-heading {
+    font-size: 4rem;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+}
+
+.home-img {
+    width: 100%;
+    border-radius: 5%;
+    border: 1px solid var(--color-pink);
+    box-shadow: var(--shadow-normal);
+}
+
+.callout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.callout-container p {
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-cursive);
+    font-weight: 900;
+    font-size: 2rem;
+    ;
+}
+
+/* Text effects */
+.text-shadow {
+    text-shadow:
+        -1px -1px 0px #000,
+        0px -1px 0px #000,
+        1px -1px 0px #000,
+        -1px 0px 0px #000,
+        1px 0px 0px #000,
+        -1px 1px 0px #000,
+        0px 1px 0px #000,
+        1px 1px 0px #000;
+}
+
+.zoom-on-hover {
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.zoom-on-hover:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+/* Messages */
+
+.alert {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Buttons */
+
+.btn-check:focus+.btn,
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn-yellow {
+    color: #000;
+    background-color: #fcf05a;
+    border-color: #ffc107;
+}
+
+.btn-yellow:hover {
+    background-color: #ffc107;
+}
+
+.btn-pink {
+    color: #000;
+    background-color: #fb99fa;
+    border-color: #d199fa;
+}
+
+.btn-pink:hover {
+    color: #fff;
+    background-color: #9e55d4;
+}
+
+.btn {
+    width: 8rem;
+    background-color: #FB99FA;
+    border-color: #FB99FA;
+    color: #000;
+}
+
+input.btn.btn-default.btn-primary {
+    width: auto;
+}
+
+.btn-check:active+.btn-primary,
+.btn-check:checked+.btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #FB99FA;
+    border-color: #FB99FA;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #FB99FA;
+    border-color: #FB99FA;
+}
+
+/* Cards */
+.card-container .card-text {
+    font-family: var(--font-cursive);
+}
+
+.crumbs-container {
+    border-bottom: 1px solid var(--color-pink);
+}
+
+.card-img-top {
+    height: 25vh;
+    object-fit: cover;
+}
+
+/* Forms */
+.form-group {
+    padding-bottom: 20px;
+}
+
+/* Modal */
+
+.card-footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card-footer li {
+    position: relative;
+    padding-left: 2.5rem;
+    /* space to preserve indentation on wrap */
+}
+
+.card-footer li:before {
+    content: '';
+    /* placeholder for the SVG */
+    position: absolute;
+    left: 0;
+    /* place the SVG at the start of the padding */
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(../media/rainbow.svg) center;
+    background-size: cover;
+    transform: translate(0, 10%);
+}
+
+.card-footer.bg-white.border-0 {
+    padding-bottom: 1rem;
+}

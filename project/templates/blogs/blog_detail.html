@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    table, tr{
+        border: 1px solid black;
+        border-radius: 12px;
+        border-collapse: collapse;
+    }
+</style>
+<br>
+<center>
+    <form action="" method="POST">
+        <input type="hidden" name="blog_id" value="{{ blog.id }}"
+        <p>
+            <table style="width: 50%;">
+                <tr>
+                    <td style="width: 80%;">
+                        Blog is for the Category: <b>{{ category }}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 80%;">
+                        Blog is Read by: <b>{{ blog.blog_read_count }}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 80%;">
+                        Average Rating Given by Users: <b>{{ rating }}</b>
+                    </td>
+                </tr>
+            </table>
+        </p>
+</center>
+
+Authored By: <b> {{ author }}</b>
+<p>
+    {{ blog.blog_text | safe}}
+</p>
+<p>
+    Total Users Rated: {{ blog.blog_rating_count }}
+</p>
+{% if current_user.username != author %}
+    <p>
+        <table style="width: 70%;">
+            <tr>
+                <td style="width: 30%;">
+                    Please Rate the blog
+                </td>
+                <td style="width: 70%;">
+                    <select name="rating">
+                        <option value="1">Not Useful</option>
+                        <option value="2">A Bit Useful</option>
+                        <option value="3">Useful, But Needs More Clarity</option>
+                        <option value="4">Nicely Written</option>
+                        <option value="5">Exceptionally Great</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Comments:
+                </td>
+                <td>
+                    <textarea style="width: 95%;" name="comment"></textarea>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="GO"/>
+    </p>
+
+{% endif %}
+</form>
+{% endblock %}

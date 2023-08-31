@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- <center><h1>Welcome to the Home Page of Blogs</h1></center> -->
+
+
+<ul class="nav justify-content-center blog_home_links">
+    <li class="nav-item">
+        <a class="nav-link active" href="{{ url_for('create_blog') }}">Create Blog</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('view_blogs') }}">View My Blogs</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('list_all_blogs') }}">List All Blogs</a>
+    </li>
+</ul>
+
+{% endblock %}
