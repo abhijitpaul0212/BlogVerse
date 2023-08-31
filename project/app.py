@@ -1,14 +1,14 @@
 import os
-from flask import Flask
+
 import json
 
 import datetime
-from datetime import timedelta
+
 from flask_mongoengine import (
     MongoEngine,
-    MongoEngineSession,
     MongoEngineSessionInterface,
 )
+
 from flask_user import (
     login_required,
     UserManager,
@@ -16,22 +16,15 @@ from flask_user import (
     current_user,
     roles_required,
 )
-from flask_login import logout_user
+
 from flask import (
     Flask,
-    render_template_string,
     render_template,
     redirect,
     url_for,
     request,
     flash,
-    session,
 )
-from mongoengine.fields import ReferenceField
-from flask_wtf.csrf import CSRFProtect, CSRFError
-import json
-from json.decoder import JSONDecodeError
-from jsonschema import validate, ValidationError
 
 from config import DevelopmentConfig
 
@@ -59,6 +52,7 @@ app.session_interface = MongoEngineSessionInterface(db)
 # Initiate the Flask Debug Toolbar Extension
 if os.environ.get("FDT") == "ON":
     toolbar = DebugToolbarExtension(app)
+
 
 # --- // Classes -> MongoDB Collections: User, Venue, Review
 # Flask-User User Class (Collection) extended with email_confirmed_at
@@ -132,7 +126,7 @@ class Comment(db.Document):
 user_manager = UserManager(app, db, User)
 
 
-# --- // Safe Havens Main Routes (Endpoints): CRUD.
+# --- // BlogVerse Main Routes (Endpoints): CRUD.
 @app.route("/")
 @app.route("/index")
 @app.route("/index.htm")
@@ -233,7 +227,12 @@ def view_blogs():
     all_categories = Category.objects.all()
     all_categories = [all_cat for all_cat in all_categories]
 
-    all_self_blogs = Blog.objects.filter(blog_user_id=current_user.id).all()
+    user = User.objects.filter(id=current_user.id).all()[0]
+
+    if user.username == 'admin':
+        all_self_blogs = Blog.objects.all()
+    else:
+        all_self_blogs = Blog.objects.filter(blog_user_id=current_user.id).all()
     return render_template("blogs/view_blog.html", all_self_blogs=all_self_blogs, all_categories=all_categories)
 
 
@@ -297,12 +296,7 @@ with app.app_context():
     get_all_categories()
 
 
-# --- // Error Handlers for 400 CSRF Error (Bad Request), 404 Page Not Found, 405 Method Not Allowed, and 500 Internal Server Error.
-@app.errorhandler(CSRFError)
-def handle_csrf_error(error):
-    excuse = "Apologies, the Safe Havens Security Detail have omitted to secure this page! We're calling them back from their lunch-break to fix this. Please click on [ Home ] to go to the Home Page, or click on [ Sign Out ] below."
-    return render_template("oops.html", error=error.description, excuse=excuse, error_type="Client: 400 - Bad Request")
-
+# --- // Error Handlers for 404 Page Not Found, 405 Method Not Allowed, and 500 Internal Server Error.
 
 @app.errorhandler(404)
 def not_found(error):

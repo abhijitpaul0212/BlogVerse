@@ -2,17 +2,28 @@
 
 {% block content %}
 <center>
+    <style>
+        th{
+            background-color: aqua;
+            text-align: center;
+        }
+
+        table, td, th{
+            border: 1px solid black;
+            border-radius: 12px;
+        }
+    </style>
     <br>
     <br>
     <h1>Hello {{ current_user.username }}</h1> Your Authored Blogs
     <p>
-        <table style="border: 1px solid black; border-radius: 10px; padding: 3%; width: 80%;">
+        <table>
             <thead>
                 <th>
                     Category
                 </th>
                 <th>
-                    Content
+                    Blog
                 </th>
                 <th>
                     Read Count
@@ -32,11 +43,12 @@
                             {% endfor %} 
                         </td>
                         <td>
+                            {{ a_blog.blog_text | safe | truncate(275) }} 
                             <a href="/self_blog_detail/{{ a_blog.id }}/{% for a_category in all_categories %}
                             {%- if a_category.id == a_blog.category_id -%} 
                                 {{ a_category.category_name }} 
                             {%- endif -%}
-                        {% endfor %} "> {{ a_blog.blog_text | safe | truncate(275) }} <i><b style="color: blueviolet;">Click here...</b></i></a>
+                        {% endfor %} "><i><b style="color: blueviolet;">Click here...</b></i></a>
                         </td>
                         <td>
                             {{ a_blog.blog_read_count }}
@@ -45,6 +57,10 @@
                             {{ a_blog.blog_rating_count }}
                         </td>
                     </tr>
+                {% else %}
+                <br>
+                <h3>You have no blogs published yet!</h3>
+                <H5><a href="{{ url_for('create_blog') }}">Create a blog</a></H5>
                 {% endfor %}
             </tbody>
         </table>

@@ -1,11 +1,14 @@
 # This file maintains all project level configurations
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class BaseConfig(object):
     """Base configuration"""
-    SECRET_KEY = "ITMYS3CR3T123"
+    SECRET_KEY = os.environ.get("SECRET_KEY")
     DEBUG = False
     DEBUG_TB_ENABLED = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -18,16 +21,16 @@ class BaseConfig(object):
     MAIL_USE_SSL = True
 
     # gmail authentication
-    # MAIL_USERNAME = os.environ['APP_MAIL_USERNAME']
-    # MAIL_PASSWORD = os.environ['APP_MAIL_PASSWORD']
-    MAIL_USERNAME = "abhijitpaul0212@gmail.com"
-    MAIL_PASSWORD = "agcnachbdlgvvdjy"
+    MAIL_USERNAME = os.environ['APP_MAIL_USERNAME']
+    MAIL_PASSWORD = os.environ['APP_MAIL_PASSWORD']
+    # MAIL_USERNAME = "abhijitpaul0212@gmail.com"
+    # MAIL_PASSWORD = "agcnachbdlgvvdjy"
 
     # mail accounts
-    MAIL_DEFAULT_SENDER = 'abhijitpaul0212@gmail.com'
+    MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER')
     
     # Flask-MongoEngine settings
-    MONGO_DB_URL = "mongodb+srv://root:root@cluster0.k3s4vuf.mongodb.net/?retryWrites=true&w=majority"
+    MONGO_DB_URL = os.environ.get('MONGO_DB_URL')
     MONGODB_SETTINGS = {
         'host': MONGO_DB_URL,
         'db': 'MyBlogs'

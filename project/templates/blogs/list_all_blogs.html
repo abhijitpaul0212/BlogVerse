@@ -5,6 +5,7 @@
     <style>
         th{
             background-color: aqua;
+            text-align: center;
         }
 
         table, td, th{
@@ -12,19 +13,21 @@
             border-radius: 12px;
         }
     </style>
+    <br>
+    <br>
 
     {% if current_user.username == Null %}
-        <h3>Welcome Guest</h3>
+        <h1>Welcome Guest</h1>
         <div><h6>** Sign In to read the blogs in details **</h6></div>
     {% else %}
-        <h3>Welcome {{ current_user.username }}</h3>
+        <h1>Welcome {{ current_user.username }}</h1>
     {% endif %}
     <p>
         <table>
             <thead>
                 <th>Author</th>
                 <th>Category</th>
-                <th>Content</th>
+                <th>Blog</th>
                 <th>Read Count</th>
                 <th>Rating</th>
             </thead>
@@ -45,7 +48,8 @@
                             {% endfor %} 
                         </td>
                         {% if current_user.is_authenticated %}
-                            <td><a href="/blogDetail/{{ a_blog.id }}/{% for a_user in all_users %}
+                            <td>{{ a_blog.blog_text | safe | truncate(275) }}
+                                <a href="/blogDetail/{{ a_blog.id }}/{% for a_user in all_users %}
                                 {%- if a_user.id == a_blog.blog_user_id -%} 
                                     {{ a_user.username }} 
                                 {%- endif -%}
@@ -53,7 +57,7 @@
                             {%- if a_category.id == a_blog.category_id -%} 
                                 {{ a_category.category_name }} 
                             {%- endif -%}
-                        {% endfor %} "> {{ a_blog.blog_text | safe | truncate(275) }} <i><b style="color: blueviolet;">Click here...</b></i></a></td>
+                        {% endfor %} "> <i><b style="color: blueviolet;">Click here...</b></i></a></td>
                         {% else %}
                             <td>{{ a_blog.blog_text | safe | truncate(275) }} <i><b style="color: blueviolet;">Sign in to read further...</b></i> </td>
                         {% endif %}

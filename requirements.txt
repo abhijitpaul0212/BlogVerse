@@ -2,7 +2,6 @@ flask==2.2.3
 flask_appbuilder
 flask_mongoengine
 mongoengine
-flake8
 pymongo==4.3.3
 pymongo[srv]
 Flask-User==1.0.2.2
