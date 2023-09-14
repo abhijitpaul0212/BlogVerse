@@ -8,3 +8,9 @@
 4. Activate virtual environment --> _source .venv/bin/activate_
 5. Install packages --> _pip3 install -r requirements.txt_
 6. Run the server --> _python3 run.py_
+
+
+### Note
+Test Username: abhijitpaul0212@gmail.com | Password: Qwerty123
+
+Happy Blogging!
