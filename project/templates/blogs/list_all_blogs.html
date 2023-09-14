@@ -57,9 +57,9 @@
                             {%- if a_category.id == a_blog.category_id -%} 
                                 {{ a_category.category_name }} 
                             {%- endif -%}
-                        {% endfor %} "> <i><b style="color: blueviolet;">Click here...</b></i></a></td>
+                        {% endfor %} "> <i><b style="color: blueviolet;">Read More</b></i></a></td>
                         {% else %}
-                            <td>{{ a_blog.blog_text | safe | truncate(275) }} <i><b style="color: blueviolet;">Sign in to read further...</b></i> </td>
+                            <td>{{ a_blog.blog_text | safe | truncate(275) }} <i><b style="color: blueviolet;"><a href="{{ url_for('user.login')}}">Read More</a></b></i> </td>
                         {% endif %}
                         <td>{{ a_blog.blog_read_count }}</td>
                         <td>{{ a_blog.blog_rating_count }}</td>

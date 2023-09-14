@@ -1,10 +1,12 @@
 # This file maintains all project level configurations
 import os
 from dotenv import load_dotenv
+import certifi
 
 load_dotenv()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+
 
 class BaseConfig(object):
     """Base configuration"""
@@ -23,8 +25,6 @@ class BaseConfig(object):
     # gmail authentication
     MAIL_USERNAME = os.environ['APP_MAIL_USERNAME']
     MAIL_PASSWORD = os.environ['APP_MAIL_PASSWORD']
-    # MAIL_USERNAME = "abhijitpaul0212@gmail.com"
-    # MAIL_PASSWORD = "agcnachbdlgvvdjy"
 
     # mail accounts
     MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER')
@@ -33,7 +33,8 @@ class BaseConfig(object):
     MONGO_DB_URL = os.environ.get('MONGO_DB_URL')
     MONGODB_SETTINGS = {
         'host': MONGO_DB_URL,
-        'db': 'MyBlogs'
+        'db': 'MyBlogs',
+        'tlscafile': certifi.where()
     }
     
     # Shown in email templates and page footers
@@ -55,4 +56,3 @@ class BaseConfig(object):
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
     DEBUG_TB_ENABLED = True
-    
