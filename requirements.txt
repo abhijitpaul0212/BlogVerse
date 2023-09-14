@@ -1,6 +1,6 @@
 flask==2.2.3
-flask_appbuilder
-flask_mongoengine
+flask_appbuilder==4.3.5
+flask_mongoengine==1.0.0
 Flask-User==1.0.2.2
 flask-login==0.6.2
 flask-mail==0.9.1
