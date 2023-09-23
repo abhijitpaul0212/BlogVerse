@@ -9,6 +9,9 @@
 5. Install packages --> _pip3 install -r requirements.txt_
 6. Run the server --> _python3 run.py_
 
+## Run Pytest
+1. Navigate to the root folder
+2. Run --> _python -m pytest_
 
 ### Note
 Test Username: abhijitpaul0212@gmail.com | Password: Qwerty123
