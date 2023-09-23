@@ -13,7 +13,6 @@ permissions:
   contents: read
 
 env:
-  SECRET_KEY: zjHUlXmuO85d2LOHqbzpd8_Qvv0XhUYxDr0ZRg2UG04
   APP_MAIL_SERVER: smtp.googlemail.com
   APP_MAIL_PORT: 465
   APP_MAIL_USERNAME: abhijitpaul0212@gmail.com
