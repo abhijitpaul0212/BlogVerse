@@ -13,6 +13,7 @@ def test_add_new_user(app, client):
 
     assert user.email == "digiscotch1@gmail.com"
     assert user.password != 'Qwerty@123'
+    assert user.first_name == "digiscotch1"
     
     user.delete()
     assert user.email not in [all_user.email for all_user in User.objects.all()]
