@@ -18,7 +18,7 @@ if os.environ.get("FDT") == "ON":
 # https://flask-user.readthedocs.io/en/latest/mongodb_app.html
 def create_app():    
     # Setup Flask and load app.config
-    app = Flask(__name__, static_folder="static", template_folder="templates")
+    application = app = Flask(__name__, static_folder="static", template_folder="templates")
     app.config.from_object(__name__ + ".DevelopmentConfig")
     # csrf = CSRFProtect(app)
     # csrf.init_app(app)
