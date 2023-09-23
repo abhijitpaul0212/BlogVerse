@@ -1,19 +1,125 @@
-from project.app import User, password_hashing
+from project.app import User, Blog, Comment, password_hashing
+import datetime
+import json
+import logging
+from bson import ObjectId
+
+LOGGER = logging.getLogger(__name__)
 
 
-def test_add_new_user(app, client):
+def test_add_user(app, client):
+    """This unit test verifies the functionality of adding new user
+    """
     user = User(
-                username="digiscotch1",
-                first_name="digiscotch1",
+                username="test_user",
+                first_name="test_user",
                 last_name="",
-                email='digiscotch1@gmail.com',
-                password=password_hashing('Qwerty@123'),
+                email='test_user@gmail.com',
+                email_confirmed_at=datetime.datetime.utcnow(),
+                password=password_hashing('test@123'),
             )
     user.save()
 
-    assert user.email == "digiscotch1@gmail.com"
-    assert user.password != 'Qwerty@123'
-    assert user.first_name == "digiscotch1"
+    assert user.email == "test_user@gmail.com"
+    assert user.password != 'test@123'
+    assert user.first_name == "test_user"
     
-    user.delete()
-    assert user.email not in [all_user.email for all_user in User.objects.all()]
+    # user.delete()
+    # assert user.email not in [all_user.email for all_user in
+    #                           User.objects.all()]
+
+
+def test_add_blog(app, client, globals):
+    """This unit test verifies the functionality of adding new blog
+    """
+    user_id = None
+    for user in User.objects.all():
+        if user.username == 'test_user':
+            user_id = json.loads(user.to_json())['_id']['$oid']
+
+    newBlog = Blog(category_id=globals[1][globals[0].index('Python')],
+                   blog_user_id=user_id,
+                   blog_text="New Python blog",
+                   blog_creation_date=datetime.datetime.utcnow(),
+                   blog_read_count=0,
+                   blog_rating_count=0)
+
+    newBlog.save()
+    assert "New Python blog" in [all_blog.blog_text for all_blog in
+                                 Blog.objects.all()]
+
+
+def test_add_comment(app, client, globals):
+    """This unit test verifies the functionality of adding new blog
+    """
+    user_id, blog_id = None, None
+    for user in User.objects.all():
+        if user.username == 'test_user':
+            user_id = json.loads(user.to_json())['_id']['$oid']
+    
+    for blog in Blog.objects.all():
+        if blog.blog_user_id == ObjectId(user_id) and "New Python blog" in blog.blog_text:
+            blog_id = json.loads(blog.to_json())['_id']['$oid']
+    
+    newComment = Comment(blog_id=blog_id,
+                         blog_comment="Nicely written Python blog",
+                         comment_user_id=user_id,
+                         blog_rating="5",
+                         blog_comment_date=datetime.datetime.utcnow())
+
+    newComment.save()
+    assert "Nicely written Python blog" in [comment.blog_comment for comment in
+                                            Comment.objects.all()]
+
+
+def test_delete_comment(app, client):
+    user_id, blog_id, comment_id = None, None, None
+    for user in User.objects.all():
+        if user.username == 'test_user':
+            user_id = json.loads(user.to_json())['_id']['$oid']
+    
+    for blog in Blog.objects.all():
+        if blog.blog_user_id == ObjectId(user_id) and "New Python blog" in blog.blog_text:
+            blog_id = json.loads(blog.to_json())['_id']['$oid']
+    
+    for comment in Comment.objects.all():
+        if comment.blog_id == ObjectId(blog_id):
+            comment_id = json.loads(comment.to_json())['_id']['$oid']
+    
+    assert "Nicely written Python blog" in [all_comment.blog_comment for all_comment in Comment.objects.all()]
+    
+    Comment.objects.filter(id=comment_id).first().delete()
+    
+    assert "Nicely written Python blog" not in [all_comment.blog_comment for all_comment in Comment.objects.all()]
+
+
+def test_delete_blog(app, client):
+    user_id, blog_id = None, None
+    for user in User.objects.all():
+        if user.username == 'test_user':
+            user_id = json.loads(user.to_json())['_id']['$oid']
+    
+    for blog in Blog.objects.all():
+        if blog.blog_user_id == ObjectId(user_id) and "New Python blog" in blog.blog_text:
+            blog_id = json.loads(blog.to_json())['_id']['$oid']
+    
+    assert "New Python blog" in [all_blog.blog_text for all_blog in
+                                 Blog.objects.all()]
+    
+    Blog.objects.filter(id=blog_id).first().delete()
+    
+    assert "New Python blog" not in [all_blog.blog_text for all_blog in
+                                     Blog.objects.all()]
+
+
+def test_delete_user(app, client):
+    user_id = None
+    for user in User.objects.all():
+        if user.username == 'test_user':
+            user_id = json.loads(user.to_json())['_id']['$oid']
+    
+    assert "test_user" in [all_user.username for all_user in User.objects.all()]
+
+    User.objects.filter(id=user_id).first().delete()
+
+    assert "test_user" not in [all_user.username for all_user in User.objects.all()]
