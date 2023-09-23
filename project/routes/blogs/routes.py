@@ -96,14 +96,14 @@ def blog_detail(blog_model_id, username, blog_model_category):
         blog_id = request.form.get('blog_id')
         print("Comment: ", comment)
         
-        old_comment = Comment.query.filter(Comment.blog_id == blog_model_id).filter(BlogComment.comment_user_id == current_user.id).first()
+        old_comment = Comment.query.filter(Comment.blog_id == blog_model_id).filter(Comment.comment_user_id == current_user.id).first()
         print("Old Comment: ", old_comment.blog_comment)
         today = datetime.now()
         
         if old_comment is None:
             blog_model.blog_rating_count += 1
             
-            new_comment = BlogComment(
+            new_comment = Comment(
                 blog_id=blog_model_id,
                 comment_user_id=current_user.id,
                 blog_comment=comment,
