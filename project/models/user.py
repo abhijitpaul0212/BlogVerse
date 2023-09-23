@@ -1,5 +1,5 @@
 from flask_user import UserMixin
-from application.extensions import db
+from project.extensions import db
 
 
 class User(db.Document, UserMixin):

@@ -1,5 +1,5 @@
-from application.models.user import User
-from application.models.blog import Blog, Comment
+from project.models.user import User
+from project.models.blog import Blog, Comment
 from werkzeug.security import generate_password_hash
 import datetime
 import json

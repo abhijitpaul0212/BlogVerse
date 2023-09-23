@@ -3,11 +3,11 @@ from flask_mongoengine import MongoEngineSessionInterface
 from flask_user import UserManager
 from flask import Flask
 from config import DevelopmentConfig
-from application.extensions import db
-from application.routes.blogs import bp as blogs_bp
-from application.routes.main import bp as main_bp
-from application.models.user import User
-from application.routes.blogs.routes import get_all_categories
+from project.extensions import db
+from project.routes.blogs import bp as blogs_bp
+from project.routes.main import bp as main_bp
+from project.models.user import User
+from project.routes.blogs.routes import get_all_categories
 
 
 if os.environ.get("FDT") == "ON":

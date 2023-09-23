@@ -1,6 +1,6 @@
 import pytest
-from application import create_app
-from application.models.blog import Category
+from project.application import create_app
+from project.models.blog import Category
 import json
 
 
