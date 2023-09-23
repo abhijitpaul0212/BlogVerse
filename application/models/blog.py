@@ -1,5 +1,5 @@
-from project.extensions import db
-from project.models.user import User
+from application.extensions import db
+from application.models.user import User
 
 
 class Category(db.Document):

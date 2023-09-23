@@ -1,12 +1,7 @@
 import pytest
-from project.app import create_app
-from project.models.blog import Category
+from application import create_app
+from application.models.blog import Category
 import json
-
-
-# @pytest.fixture
-# def app():
-#     yield create_app()
 
 
 @pytest.fixture
