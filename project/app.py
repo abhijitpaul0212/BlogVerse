@@ -126,6 +126,10 @@ class Comment(db.Document):
 user_manager = UserManager(app, db, User)
 
 
+def password_hashing(password):
+    return user_manager.hash_password(password)
+    
+
 # --- // BlogVerse Main Routes (Endpoints): CRUD.
 @app.route("/")
 @app.route("/index")
@@ -140,7 +144,9 @@ def home_page():
 
     # Create admin user as first/default user, if admin does not exist.
     # Password and e-mail are set using environment variables.
-    if not User.objects.filter(User.username == "admin"):
+    all_users = [all_user.username for all_user in User.objects.all()]
+
+    if 'admin' not in all_users:
         try:
             user = User(
                 username="admin",
@@ -148,7 +154,7 @@ def home_page():
                 last_name="Administrator",
                 email='ad@min.com',
                 email_confirmed_at=datetime.datetime.utcnow(),
-                password=user_manager.hash_password('admin'),
+                password=password_hashing('admin'),
             )
             user.roles.append("Admin")
             user.save()
