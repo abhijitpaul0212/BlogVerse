@@ -4,7 +4,7 @@
     <center>
     <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('blogs') }}">
+        <a class="navbar-brand" href="{{ url_for('blogs.blogs') }}">
           <img src="{{ url_for('static', filename='images/blogverse.png') }}" alt="" width="30" height="30" class="d-inline-block">
           BlogVerse
         </a>
@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
           <ul class="navbar-nav m-auto mb-2 mb-lg-2">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('blogs') }}">Home</a>
+              <a class="nav-link active" aria-current="page" href="{{ url_for('blogs.blogs') }}">Home</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-2">
@@ -26,10 +26,10 @@
                 <a class="nav-link" href="{{ url_for('user.logout') }}">Sign out</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="{{ url_for('create_blog') }}">Create Blog</a>
+                <a class="nav-link active" href="{{ url_for('blogs.create_blog') }}">Create Blog</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('view_blogs') }}">My Blogs</a>
+                  <a class="nav-link" href="{{ url_for('blogs.view_blogs') }}">My Blogs</a>
               </li>
             {% else %}
               <li class="nav-item">

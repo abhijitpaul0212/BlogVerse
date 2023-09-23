@@ -1,17 +1,19 @@
 import pytest
-from project.app import app as flask_app
-from project.app import Category
+from project.app import create_app
+from project.models.blog import Category
 import json
 
 
-@pytest.fixture
-def app():
-    yield flask_app
+# @pytest.fixture
+# def app():
+#     yield create_app()
 
 
 @pytest.fixture
-def client(app):
-    return app.test_client()
+def client():
+    app = create_app()
+    with app.test_client() as client:
+        yield client
 
 
 @pytest.fixture

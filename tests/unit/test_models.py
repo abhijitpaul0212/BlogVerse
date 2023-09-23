@@ -1,4 +1,6 @@
-from project.app import User, Blog, Comment, password_hashing
+from project.models.user import User
+from project.models.blog import Blog, Comment
+from werkzeug.security import generate_password_hash
 import datetime
 import json
 import logging
@@ -7,7 +9,7 @@ from bson import ObjectId
 LOGGER = logging.getLogger(__name__)
 
 
-def test_add_user(app, client):
+def test_add_user(client):
     """This unit test verifies the functionality of adding new user
     """
     user = User(
@@ -16,7 +18,7 @@ def test_add_user(app, client):
                 last_name="",
                 email='test_user@gmail.com',
                 email_confirmed_at=datetime.datetime.utcnow(),
-                password=password_hashing('test@123'),
+                password=generate_password_hash('test@123'),
             )
     user.save()
 
@@ -29,7 +31,7 @@ def test_add_user(app, client):
     #                           User.objects.all()]
 
 
-def test_add_blog(app, client, globals):
+def test_add_blog(client, globals):
     """This unit test verifies the functionality of adding new blog
     """
     user_id = None
@@ -49,7 +51,7 @@ def test_add_blog(app, client, globals):
                                  Blog.objects.all()]
 
 
-def test_add_comment(app, client, globals):
+def test_add_comment(client):
     """This unit test verifies the functionality of adding new blog
     """
     user_id, blog_id = None, None
@@ -72,7 +74,7 @@ def test_add_comment(app, client, globals):
                                             Comment.objects.all()]
 
 
-def test_delete_comment(app, client):
+def test_delete_comment(client):
     user_id, blog_id, comment_id = None, None, None
     for user in User.objects.all():
         if user.username == 'test_user':
@@ -93,7 +95,7 @@ def test_delete_comment(app, client):
     assert "Nicely written Python blog" not in [all_comment.blog_comment for all_comment in Comment.objects.all()]
 
 
-def test_delete_blog(app, client):
+def test_delete_blog(client):
     user_id, blog_id = None, None
     for user in User.objects.all():
         if user.username == 'test_user':
@@ -112,7 +114,7 @@ def test_delete_blog(app, client):
                                      Blog.objects.all()]
 
 
-def test_delete_user(app, client):
+def test_delete_user(client):
     user_id = None
     for user in User.objects.all():
         if user.username == 'test_user':

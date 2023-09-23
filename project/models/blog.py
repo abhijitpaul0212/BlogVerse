@@ -1,9 +1,8 @@
 from project.extensions import db
-from enum import unique
 from project.models.user import User
 
 
-class Category(db.Document):    
+class Category(db.Document):
     category_name = db.StringField(default="")
 
     meta = {

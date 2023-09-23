@@ -11,7 +11,7 @@
 
 ## Run Pytest
 1. Navigate to the root folder
-2. Run --> _python -m pytest_
+2. Run --> _python -m pytest --disable-warnings_
 
 ### Note
 Test Username: abhijitpaul0212@gmail.com | Password: Qwerty123
