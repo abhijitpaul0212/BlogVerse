@@ -1,6 +1,6 @@
 import pytest
 from application import application as app
-from project.models.blog import Category
+from src.models.blog import Category
 import json
 
 

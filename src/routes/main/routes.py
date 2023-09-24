@@ -1,11 +1,11 @@
 from flask import redirect, url_for, flash
-from project.routes.main import bp
+from src.routes.main import bp
 import datetime
 
 from flask_user import UserManager
 
-from project.extensions import db
-from project.models.user import User
+from src.extensions import db
+from src.models.user import User
 
 from flask import current_app
 

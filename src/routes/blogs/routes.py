@@ -14,10 +14,10 @@ from flask import (
     request
 )
 
-from project.models.user import User
-from project.models.blog import Blog, Category, Comment
+from src.models.user import User
+from src.models.blog import Blog, Category, Comment
 
-from project.routes.blogs import bp
+from src.routes.blogs import bp
 
 
 # Global variable

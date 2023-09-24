@@ -4,9 +4,9 @@ from flask import Flask
 import click
 from flask.cli import with_appcontext
 
-from project.extensions import db
-from project.models.user import UserModel
-from project.models.blog import CategoryMaster
+from src.extensions import db
+from src.models.user import UserModel
+from src.models.blog import CategoryMaster
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))

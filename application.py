@@ -3,17 +3,17 @@ from flask_mongoengine import MongoEngineSessionInterface
 from flask_user import UserManager
 from flask import Flask
 from config import DevelopmentConfig
-from project.extensions import db
-from project.routes.blogs import bp as blogs_bp
-from project.routes.main import bp as main_bp
-from project.models.user import User
-from project.routes.blogs.routes import get_all_categories
+from src.extensions import db
+from src.routes.blogs import bp as blogs_bp
+from src.routes.main import bp as main_bp
+from src.models.user import User
+from src.routes.blogs.routes import get_all_categories
 
 
 if os.environ.get("FDT") == "ON":
     from flask_debugtoolbar import DebugToolbarExtension
 
-application = Flask(__name__, static_folder="project//static", template_folder="project//templates")
+application = Flask(__name__, static_folder="src//static", template_folder="src//templates")
 app = application
 app.config.from_object(__name__ + ".DevelopmentConfig")
 
