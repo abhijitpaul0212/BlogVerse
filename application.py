@@ -15,6 +15,7 @@ if os.environ.get("FDT") == "ON":
 
 application=Flask(__name__, static_folder="project//static", template_folder="project//templates")
 app=application
+app.config.from_object(__name__ + ".DevelopmentConfig")
 
 if os.environ.get("FDT") == "ON":
         app.debug = True
