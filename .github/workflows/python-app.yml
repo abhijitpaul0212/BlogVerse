@@ -18,7 +18,7 @@ env:
   APP_MAIL_PORT: 465
   APP_MAIL_USERNAME: abhijitpaul0212@gmail.com
   APP_MAIL_PASSWORD: agcnachbdlgvvdjy
-  FLASK_APP: application/
+  FLASK_APP: application.py
   FLASK_ENV: development
   MONGO_DB_URL: mongodb+srv://root:root@cluster0.k3s4vuf.mongodb.net/?retryWrites=true&w=majority&ssl=true
   MAIL_DEFAULT_SENDER: abhijitpaul0212@gmail.com
