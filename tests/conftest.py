@@ -1,12 +1,11 @@
 import pytest
-from application import create_app
+from application import application as app
 from project.models.blog import Category
 import json
 
 
 @pytest.fixture
 def client():
-    app = create_app()
     with app.test_client() as client:
         yield client
 

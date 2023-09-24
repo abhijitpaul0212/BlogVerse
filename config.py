@@ -28,7 +28,7 @@ class BaseConfig(object):
 
     # mail accounts
     MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER')
-    
+
     # Flask-MongoEngine settings
     MONGO_DB_URL = os.environ.get('MONGO_DB_URL')
     MONGODB_SETTINGS = {
