@@ -19,4 +19,8 @@
 ### Note
 Test Username: abhijitpaul0212@gmail.com | Password: Qwerty123
 
+### Project is LIVE
+Render: https://blogverse-dhh8.onrender.com/
+AWS: http://blogverse-env.eba-m3q4hiu7.us-east-1.elasticbeanstalk.com/
+
 Happy Blogging!
