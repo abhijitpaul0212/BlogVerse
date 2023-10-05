@@ -55,6 +55,11 @@ My motivation behind this project is to enhance my programming skills on Python 
 
 
 ## Project Demo
+
+[<img src="![image](https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/2010435d-337e-4345-8791-bd84bcbc5ce2)
+" width="600" height="300"
+/>](https://www.youtube.com/embed/8lv5jNUXcKQ)
+
 [https://youtu.be/8lv5jNUXcKQ](https://youtu.be/8lv5jNUXcKQ)
 
 ## Contributing
