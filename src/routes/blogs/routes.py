@@ -64,8 +64,6 @@ def create_blog():
         newBlog.save()
         return redirect("blogs")
     else:
-        print(global_all_category_num)
-        print(global_all_category_name)
         return render_template("blogs/create_blog.html", all_category_id=global_all_category_num, all_category_name=global_all_category_name)
 
 
@@ -112,7 +110,6 @@ def blog_detail(blog_id, username, blog_category):
         for rating in avg_ratings:
             if str(list(rating.values())[0]) == blog_id:
                 blog_rating = list(rating.values())[1]
-
         return render_template('blogs/blog_detail.html', blog=blog, rating=blog_rating, author=username, category=blog_category)
     else:
         rate = request.form.get('rating')
