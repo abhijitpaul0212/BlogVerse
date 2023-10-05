@@ -55,8 +55,16 @@ My motivation behind this project is to enhance my programming skills on Python 
 
 
 ## Project Demo
+https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/59ac1f31-a155-4c8d-a1dd-ed823538f025
 
-[![Project Demo](https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/5bd9b41c-ae6f-4cd5-b2fb-98b6c2dc5bf8)](https://www.youtube.com/watch?v=8lv5jNUXcKQ)
+
+## Project Artifacts
+1. High Level Design (HLD): [HLD_BloggingWebsite.pdf](https://github.com/abhijitpaul0212/BlogVerse/files/12819491/HLD_BloggingWebsite.pdf)
+2. Low Level Design (LLD): [LLD_BloggingWebsite.pdf](https://github.com/abhijitpaul0212/BlogVerse/files/12819488/LLD_BloggingWebsite.pdf)
+3. Architecture Design: [Architechture_BloggingWebsite.pdf](https://github.com/abhijitpaul0212/BlogVerse/files/12819485/Architechture_BloggingWebsite.pdf)
+4. Wireframe Document: [Wireframe_BloggingWebsite.pdf](https://github.com/abhijitpaul0212/BlogVerse/files/12819489/Wireframe_BloggingWebsite.pdf)
+5. Detailed Project Report (DPR): [DPR_BloggingWebsite.pdf](https://github.com/abhijitpaul0212/BlogVerse/files/12819490/DPR_BloggingWebsite.pdf)
+6. Project Demo Video: https://youtu.be/8lv5jNUXcKQ?si=Ff1MIxzQMp9MBvj1
 
 
 ## Contributing
