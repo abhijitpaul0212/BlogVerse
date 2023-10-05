@@ -56,14 +56,9 @@ My motivation behind this project is to enhance my programming skills on Python 
 
 ## Project Demo
 
-[<img src="![image](https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/2010435d-337e-4345-8791-bd84bcbc5ce2)
-" width="600" height="300"
-/>](https://www.youtube.com/embed/8lv5jNUXcKQ)
+[![Project Demo](https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/5bd9b41c-ae6f-4cd5-b2fb-98b6c2dc5bf8 "Project Demo")](https://youtu.be/8lv5jNUXcKQ)
 
-[![fakeYT](https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/5bd9b41c-ae6f-4cd5-b2fb-98b6c2dc5bf8)
-)](http://www.youtube.com/watch?v=8lv5jNUXcKQ "BlogVerse - Blog Creator Web Application")
 
-[https://youtu.be/8lv5jNUXcKQ](https://youtu.be/8lv5jNUXcKQ)
 
 ## Contributing
 Contributions to this project are welcome. If you find any issues or want to enhance the functionality, feel free to open a pull request. Please make sure to follow the coding conventions and provide detailed information about the changes.
