@@ -56,8 +56,7 @@ My motivation behind this project is to enhance my programming skills on Python 
 
 ## Project Demo
 
-[![Project Demo](https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/5bd9b41c-ae6f-4cd5-b2fb-98b6c2dc5bf8 "Project Demo")](https://youtu.be/8lv5jNUXcKQ)
-
+[![Project Demo](https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/5bd9b41c-ae6f-4cd5-b2fb-98b6c2dc5bf8)](https://www.youtube.com/watch?v=8lv5jNUXcKQ)
 
 
 ## Contributing
