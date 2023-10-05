@@ -1,13 +1,9 @@
-from flask import redirect, url_for, flash
-from src.routes.main import bp
 import datetime
-
+from flask import redirect, url_for, flash, current_app
 from flask_user import UserManager
-
+from src.routes.main import bp
 from src.extensions import db
 from src.models.user import User
-
-from flask import current_app
 
 
 user_manager = UserManager(current_app, db, User)
