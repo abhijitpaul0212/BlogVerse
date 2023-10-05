@@ -60,6 +60,9 @@ My motivation behind this project is to enhance my programming skills on Python 
 " width="600" height="300"
 />](https://www.youtube.com/embed/8lv5jNUXcKQ)
 
+[![fakeYT](https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/5bd9b41c-ae6f-4cd5-b2fb-98b6c2dc5bf8)
+)](http://www.youtube.com/watch?v=8lv5jNUXcKQ "BlogVerse - Blog Creator Web Application")
+
 [https://youtu.be/8lv5jNUXcKQ](https://youtu.be/8lv5jNUXcKQ)
 
 ## Contributing
