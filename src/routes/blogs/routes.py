@@ -1,22 +1,17 @@
 import json
-
 import datetime
-
 from flask_user import (
     login_required,
     current_user
 )
-
 from flask import (
     render_template,
     redirect,
     url_for,
     request
 )
-
 from src.models.user import User
 from src.models.blog import Blog, Category, Comment
-
 from src.routes.blogs import bp
 
 
@@ -42,13 +37,9 @@ def blogs():
 # CRUD for Blogs
 @bp.route("/listAllBlogs")
 def list_all_blogs():
-    all_blogs = Blog.objects.all()
-    all_blogs = [all_blog for all_blog in all_blogs]
+    all_blogs = reversed(Blog.objects.all())  # reverse to display recent ones on the top
     all_users = User.objects.all()
-    all_users = [all_user for all_user in all_users]
     all_categories = Category.objects.all()
-    all_categories = [all_cat for all_cat in all_categories]
-    print(all_categories)
     return render_template('blogs/list_all_blogs.html', all_blogs=all_blogs, all_users=all_users, all_categories=all_categories)
 
 
@@ -82,14 +73,14 @@ def create_blog():
 @login_required
 def view_blogs():
     all_categories = Category.objects.all()
-    all_categories = [all_cat for all_cat in all_categories]
-
+    
     user = User.objects.filter(id=current_user.id).all()[0]
-
     if user.username == 'admin':
         all_self_blogs = Blog.objects.all()
     else:
         all_self_blogs = Blog.objects.filter(blog_user_id=current_user.id).all()
+
+    all_self_blogs = reversed(all_self_blogs)  # reverse to display recent ones on the top
     return render_template("blogs/view_blog.html", all_self_blogs=all_self_blogs, all_categories=all_categories)
 
 
