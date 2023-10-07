@@ -48,6 +48,9 @@ My motivation behind this project is to enhance my programming skills on Python 
 1. Navigate to the root folder
 2. Run --> _python -m pytest --disable-warnings_
 
+## 
+Add new category --> $python manage.py --name=<category_name>
+
 
 ### Project URLs
 1. Render: https://blogverse-dhh8.onrender.com/
