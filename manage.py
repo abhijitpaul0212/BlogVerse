@@ -3,60 +3,30 @@ import datetime
 from flask import Flask
 import click
 from flask.cli import with_appcontext
-
+from flask_mongoengine import MongoEngineSessionInterface
 from src.extensions import db
-from src.models.user import UserModel
-from src.models.blog import CategoryMaster
+from src.models.blog import Category
+from config import DevelopmentConfig
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-manage_app = Flask(__name__)
-manage_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'instance/app.db')
-db.init_app(manage_app)
+app = Flask(__name__)
+app.config.from_object(__name__ + ".DevelopmentConfig")
+db.init_app(app)
 
-
-@click.command(name='create_all_tables')
-@with_appcontext
-def create_all_tables():
-    """Creates the db tables."""
-    db.create_all()
-    
-@click.command(name='drop_all_tables')
-@with_appcontext
-def drop_all_tables():
-    """Drops the db tables."""
-    db.drop_all()
-
-@click.command(name='create_admin')
-@with_appcontext
-def create_admin():
-    """Creates the admin user."""
-    admin_user = UserModel(
-        email="ad@min.com",
-        username='admin',
-        password="admin",
-        admin=True,
-        confirmed=True,
-        confirmed_on=datetime.datetime.now())
-    db.session.add(admin_user)
-    db.session.commit()
-    print("Admin user created successfully", UserModel.query.filter_by(email='ad@min.com').first().email)
-    
-@click.command(name='create_new_category')
-@click.argument('category_name')
-@with_appcontext
-def create_new_category(category_name):
-    category = CategoryMaster(
-        category_name=category_name
+# Use Flask Sessions with Mongoengine
+app.session_interface = MongoEngineSessionInterface(db)
+   
+@click.command()
+@click.option('--name', help='Name of category')
+def create_category(name):
+    category = Category(
+        category_name=name
     )
-    db.session.add(category)
-    db.session.commit()
-    print("Category added successfully", CategoryMaster.query.filter_by(category_name=category_name).first().category_name)
+    category.save()
+    print("Category '{}' added successfully".format(Category.objects(category_name=name).first().category_name))
 
     
-# add command function to cli commands
-manage_app.cli.add_command(create_all_tables)
-manage_app.cli.add_command(drop_all_tables)
-manage_app.cli.add_command(create_admin)
-manage_app.cli.add_command(create_new_category)
+if __name__ == '__main__':
+    create_category()
