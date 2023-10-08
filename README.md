@@ -125,14 +125,16 @@ BlogVerse
 │   ├── templates
 │   │   ├── base.html
 │   │   ├── blogs
+│   │   ├── flask_user
+│   │   │   ├── emails
+│   │   │   ├── login.html
+│   │   │   ├── register.html
 │   │   ├── index.html
 │   │   ├── layout.html
 │   │   └── oops.html
 ├── tests
 │   ├── conftest.py
 │   ├── unit
-
-13 directories, 23 files
 ```
 
 ## Contributing
