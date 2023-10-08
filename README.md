@@ -34,22 +34,47 @@ My motivation behind this project is to enhance my programming skills on Python 
 
 ## Installation
 1. Navigate a new folder (e.g. Projects)
-2. Run: _git init_
-3. Clone the repo: _git clone https://github.com/abhijitpaul0212/BlogVerse.git_
-4. Navigate to the BlogVerse folder (root folder)
-5. Create virtual environment --> _python3 -m venv .venv_
-6. Activate virtual environment --> _source .venv/bin/activate_
-7. Install packages --> _pip3 install -r requirements.txt_
-8. Setup environment variables as per you (use _.env.example_ file and rename it to _.env_)
-9. Run the server --> _python3 application.py_  | _flask run_
+2. Intialize Git
+   ```
+   git init
+   ```
+4. Clone the repo
+   ```
+   git clone https://github.com/abhijitpaul0212/BlogVerse.git
+   ```
+6. Navigate to the BlogVerse folder (root folder)
+7. Create virtual environment
+   ```
+   python3 -m venv .venv
+   ```
+9. Activate virtual environment
+   ```
+   source .venv/bin/activate
+   ```
+11. Install packages
+    ```
+    pip3 install -r requirements.txt
+    ```
+13. Setup environment variables as per you (use _.env.example_ file and rename it to _.env_)
+14. Run the server
+    ```
+    python3 application.py_  | _flask run
+    ```
 
 
 ## Unit Test
 1. Navigate to the root folder
-2. Run --> _python -m pytest --disable-warnings_
+2. Run
+   ```
+   python -m pytest --disable-warnings
+   ```
 
-## 
-Add new category --> $python manage.py --name=<category_name>
+
+## Flask Scripts 
+Adding new category
+```
+python manage.py --name=<category_name>
+```
 
 
 ### Project URLs
@@ -69,6 +94,46 @@ https://github.com/abhijitpaul0212/BlogVerse/assets/9966441/59ac1f31-a155-4c8d-a
 5. Detailed Project Report (DPR): [DPR_BloggingWebsite.pdf](https://github.com/abhijitpaul0212/BlogVerse/files/12819490/DPR_BloggingWebsite.pdf)
 6. Project Demo Video: https://youtu.be/8lv5jNUXcKQ?si=Ff1MIxzQMp9MBvj1
 
+
+## Project Hierarchy
+```
+BlogVerse
+├── application.py
+├── config.py
+├── manage.py
+├── README.md
+├── requirements.txt
+├── src
+│   ├── extensions.py
+│   ├── models
+│   │   ├── blog.py
+│   │   ├── user.py
+│   ├── routes
+│   │   ├── blogs
+│   │   │   ├── routes.py
+│   │   ├── main
+│   │   │   ├── routes.py
+│   ├── static
+│   │   ├── css
+│   │   │   └── styles.css
+│   │   ├── images
+│   │   │   ├── bg.jpg
+│   │   │   ├── blogverse.png
+│   │   │   └── logo.svg
+│   │   └── scripts
+│   │       └── message.js
+│   ├── templates
+│   │   ├── base.html
+│   │   ├── blogs
+│   │   ├── index.html
+│   │   ├── layout.html
+│   │   └── oops.html
+├── tests
+│   ├── conftest.py
+│   ├── unit
+
+13 directories, 23 files
+```
 
 ## Contributing
 Contributions to this project are welcome. If you find any issues or want to enhance the functionality, feel free to open a pull request. Please make sure to follow the coding conventions and provide detailed information about the changes.
