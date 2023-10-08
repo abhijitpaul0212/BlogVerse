@@ -71,9 +71,14 @@ My motivation behind this project is to enhance my programming skills on Python 
 
 
 ## Flask Scripts 
-Adding new category
+Adding single new category
 ```
 python manage.py --name=<category_name>
+```
+
+Adding multiple new categories
+```
+python manage.py --name=<category1_name,category2_name,category3_name>
 ```
 
 
