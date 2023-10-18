@@ -1,5 +1,5 @@
 # BlogVerse
-
+[![wakatime](https://wakatime.com/badge/user/018b43cb-0614-4d68-9d85-6ef192b11745/project/018b43df-e285-4d68-bd03-65eb275f32e7.svg)](https://wakatime.com/@abhijitpaul)
 
 ## Problem Statement
 Create an web application to facilitate the blog creation capabilities with below mentioned features
