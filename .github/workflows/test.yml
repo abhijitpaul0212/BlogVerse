@@ -3,15 +3,22 @@
 
 name: test
 
+# Controls when the workflow will run
 on:
+# Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
+  # Allows you to run this workflow automatically
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *' # Every 5 minute
+
 permissions:
   contents: read
-
+  
 env:
   SECRET_KEY: zjHUlXmuO85d2LOHqbzpd8_Qvv0XhUYxDr0ZRg2UG04
   APP_MAIL_SERVER: smtp.googlemail.com
