@@ -1,17 +1,17 @@
 <p align="center">
  <img width="100px" src="https://github.com/abhijitpaul0212/BlogVerse/blob/main/src/static/images/blogverse.png" align="center" alt="BlogVerse" />
  <h2 align="center">BlogVerse</h2>
- <p align="center">Dynamically generated GitHub stats</p>
+ <p align="center">Get dynamically generated GitHub stats on your READMEs!</p>
 </p>
   <p align="center">
     <a href="https://github.com/abhijitpaul0212/BlogVerse/actions">
-      <img alt="Tests Passing" src="https://github.com/abhijitpaul0212/BlogVerse/workflows/test/badge.svg" />
+      <img alt="Tests Passing" src="https://github.com/abhijitpaul0212/BlogVerse/workflows/Application Test/badge.svg" />
     </a>
     <a href="https://app.codecov.io/gh/abhijitpaul0212/BlogVerse">
       <img alt="Code Coverage" src="https://codecov.io/gh/abhijitpaul0212/BlogVerse/branch/main/graph/badge.svg" />
     </a>
     <a href="https://wakatime.com/@abhijitpaul">
-      <img alt="Wakatime" src="https://wakatime.com/badge/user/018b43cb-0614-4d68-9d85-6ef192b11745/project/018b43df-e285-4d68-bd03-65eb275f32e7.svg" />
+      <img alt="Code Coverage" src="https://wakatime.com/badge/user/018b43cb-0614-4d68-9d85-6ef192b11745/project/018b43df-e285-4d68-bd03-65eb275f32e7.svg" />
     </a>
 
 ## Problem Statement
@@ -161,7 +161,7 @@ BlogVerse
 │   ├── unit
 ```
 
-## Contribution
+## Contributing
 Contributions to this project are welcome. If you find any issues or want to enhance the functionality, feel free to open a pull request. Please make sure to follow the coding conventions and provide detailed information about the changes.
 
 
