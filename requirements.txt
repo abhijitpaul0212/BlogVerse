@@ -1,6 +1,6 @@
 apispec==6.3.0
 attrs==23.1.0
-Babel==2.12.1
+Babel==2.13.0
 bcrypt==4.0.1
 blinker==1.6.2
 certifi==2023.7.22
