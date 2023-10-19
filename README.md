@@ -1,5 +1,15 @@
-# BlogVerse
-[![wakatime](https://wakatime.com/badge/user/018b43cb-0614-4d68-9d85-6ef192b11745/project/018b43df-e285-4d68-bd03-65eb275f32e7.svg)](https://wakatime.com/@abhijitpaul)
+<p align="center">
+ <img width="100px" src="https://github.com/abhijitpaul0212/BlogVerse/blob/main/src/static/images/blogverse.png" align="center" alt="BlogVerse" />
+ <h2 align="center">BlogVerse</h2>
+ <p align="center">Get dynamically generated GitHub stats on your READMEs!</p>
+</p>
+  <p align="center">
+    <a href="https://app.codecov.io/gh/abhijitpaul0212/BlogVerse">
+      <img alt="Code Coverage" src="https://codecov.io/gh/abhijitpaul0212/BlogVerse/branch/main/graph/badge.svg" />
+    </a>
+    <a href="https://wakatime.com/@abhijitpaul">
+      <img alt="Code Coverage" src="https://wakatime.com/badge/user/018b43cb-0614-4d68-9d85-6ef192b11745/project/018b43df-e285-4d68-bd03-65eb275f32e7.svg" />
+    </a>
 
 ## Problem Statement
 Create an web application to facilitate the blog creation capabilities with below mentioned features
@@ -58,7 +68,7 @@ My motivation behind this project is to enhance my programming skills on Python 
 13. Setup environment variables as per you (use _.env.example_ file and rename it to _.env_)
 14. Run the server
     ```
-    python3 application.py_  | _flask run
+    python3 application.py  | flask run
     ```
 
 
@@ -69,6 +79,12 @@ My motivation behind this project is to enhance my programming skills on Python 
    python -m pytest --disable-warnings
    ```
 
+## Code Coverage
+1. Navigate to the root folder
+2. Run
+   ```
+   python -m pytest --cov=./ --cov-report=xml
+   ```
 
 ## Flask Scripts 
 Adding single new category
