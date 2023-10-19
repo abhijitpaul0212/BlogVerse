@@ -4,6 +4,9 @@
  <p align="center">Get dynamically generated GitHub stats on your READMEs!</p>
 </p>
   <p align="center">
+    <a href="https://github.com/abhijitpaul0212/BlogVerse/actions">
+      <img alt="Tests Passing" src="https://github.com/abhijitpaul0212/BlogVerse/workflows/Application Test/badge.svg" />
+    </a>
     <a href="https://app.codecov.io/gh/abhijitpaul0212/BlogVerse">
       <img alt="Code Coverage" src="https://codecov.io/gh/abhijitpaul0212/BlogVerse/branch/main/graph/badge.svg" />
     </a>
