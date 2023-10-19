@@ -11,3 +11,4 @@ certifi==2023.7.22
 gunicorn
 werkzeug==2.2.2
 coverage
+pytest-cov
