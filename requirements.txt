@@ -1,5 +1,5 @@
 flask==2.2.3
-flask_appbuilder==4.3.5
+flask_appbuilder==4.3.9
 flask_mongoengine==1.0.0
 Flask-User==1.0.2.2
 flask-login==0.6.2
