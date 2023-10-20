@@ -9,6 +9,6 @@ pytest-flask==1.2.0
 python-dotenv==0.13.0
 certifi==2023.7.22
 gunicorn==21.2.0
-werkzeug==2.2.2
+werkzeug==3.0.0
 coverage==7.3.2
 codecov==2.1.13
