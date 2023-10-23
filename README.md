@@ -58,12 +58,19 @@ My motivation behind this project is to enhance my programming skills on Python 
 6. Navigate to the BlogVerse folder (root folder)
 7. Create virtual environment
    ```
-   python3 -m venv .venv
+   python -m venv .venv
    ```
 9. Activate virtual environment
+   MAC/Linux
    ```
    source .venv/bin/activate
    ```
+
+   Windows
+   ```
+   .\.venv\Scripts\activate
+   ```
+   
 11. Install packages
     ```
     pip3 install -r requirements.txt
