@@ -66,9 +66,9 @@ My motivation behind this project is to enhance my programming skills on Python 
    source .venv/bin/activate
    ```
 
-   Windows
+   Windows (git bash)
    ```
-   .\.venv\Scripts\activate
+   source .venv/Scripts/activate
    ```
    
 11. Install packages
