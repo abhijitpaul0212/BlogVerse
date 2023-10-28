@@ -24,7 +24,7 @@ Technology:
 • Python (Flask)
 • Database (NoSQL)
 • HTML
-• Javascript, CSS, Bootstrap.
+• Javascript, CSS, Bootstrap
 
 
 ## Introduction
