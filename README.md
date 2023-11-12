@@ -173,5 +173,5 @@ Contributions to this project are welcome. If you find any issues or want to enh
 
 
 ## License
-This project is licensed under the MIT License
+This project is licensed under the MIT License.
 
