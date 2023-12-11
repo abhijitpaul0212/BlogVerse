@@ -19,7 +19,7 @@ Create an web application to facilitate the blog creation capabilities with belo
 1. Create infrastructure in such a way that any user can create their blog.
 2. Allow user to use different type of formatting for text
 3. Your web application should allow user to generate a link for every blog created at
-your application so that user can showcase their blog to real world.
+your application so that user can showcase their blog to real world
 Technology:
 • Python (Flask)
 • Database (NoSQL)
